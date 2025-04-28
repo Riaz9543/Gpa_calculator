@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Free online SSC GPA Calculator for Bangladesh. Accurately calculate your SSC GPA for Science, humanities, and Commerce groups with instant results. Official grading system compliant.">
+  <meta name="keywords" content="SSC GPA Calculator, SSC Result Calculator Bangladesh, Calculate GPA Online, Education Bangladesh, Secondary School Certificate, GPA Calculation Science humanitiesCommerce">
+  <meta name="author" content="EdTech Bangladesh">
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="SSC GPA Calculator | Bangladesh Education Tool">
+  <meta property="og:description" content="Accurate SSC GPA Calculator for Science, humanities, and Commerce groups. Instant results with official grading system.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com">
+  <meta property="og:image" content="https://example.com/ssc-gpa-calculator.png">
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "SSC GPA Calculator",
+    "description": "Official SSC GPA calculation tool for Bangladesh education system",
+    "applicationCategory": "Educational",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <title>SSC GPA Calculator Bangladesh - Science, humanities, Commerce Group Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+<body>
+
+<main class="container" role="main">
+  <header class="hero-header">
+    <div class="logo-container">
+      <div class="logo">
+        <span class="logo-icon">🎓</span>
+        SSC GPA Calculator
+      </div>
+    </div>
+    <p class="tagline">Calculate your Secondary School Certificate GPA in seconds</p>
+  </header>
+
+  <section class="group-select">
+    <h2 class="group-heading">Select Your Group</h2>
+    <div class="group-options">
+      <button type="button" 
+              class="group-card science" 
+              onclick="showSubjects('science')"
+              aria-label="Select Science Group">
+        <div class="group-icon">🔬</div>
+        <div class="group-info">
+          <h3>Science</h3>
+          <p>Physics, Chemistry, Biology/Higher Math</p>
+        </div>
+      </button>
+
+      <button type="button" 
+              class="group-card humanities" 
+              onclick="showSubjects('humanities')"
+              aria-label="Select humanitiesGroup">
+        <div class="group-icon">🎨</div>
+        <div class="group-info">
+          <h3>humanities</h3>
+          <p>History, Civics, Economics</p>
+        </div>
+      </button>
+
+      <button type="button" 
+              class="group-card commerce" 
+              onclick="showSubjects('commerce')"
+              aria-label="Select Commerce Group">
+        <div class="group-icon">📈</div>
+        <div class="group-info">
+          <h3>Commerce</h3>
+          <p>Accounting, Business, Finance</p>
+        </div>
+      </button>
+    </div>
+  </section>
+
+  <form id="gpaForm" style="display:none;" aria-label="GPA Form">
+    <div id="subjects"></div>
+
+    <div class="optional-subjects">
+      <div class="subject">
+        <label for="ict">ICT:</label>
+        <select class="grade" id="ict" aria-label="ICT Grade">
+          <option value="">--Grade--</option>
+          <option value="5">A+</option>
+          <option value="4">A</option>
+          <option value="3.5">A-</option>
+          <option value="3">B</option>
+          <option value="2">C</option>
+          <option value="1">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+
+      <div class="subject">
+        <label for="optional">Optional Subject:</label>
+        <select class="grade" id="optional" aria-label="Optional Subject Grade">
+          <option value="">--Grade--</option>
+          <option value="5">A+</option>
+          <option value="4">A</option>
+          <option value="3.5">A-</option>
+          <option value="3">B</option>
+          <option value="2">C</option>
+          <option value="1">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+    </div>
+
+    <button type="button" onclick="calculateGPA()" aria-label="Calculate GPA">Calculate GPA</button>
+  </form>
+
+  <div id="result" aria-live="polite"></div>
+
+  <section class="seo-content">
+    <h2>How to Calculate SSC GPA</h2>
+    <p>Calculate your Secondary School Certificate GPA instantly using our official Bangladesh education system calculator. Supports all groups including Science, humanities, and Commerce. Simply select your subjects and grades to get accurate GPA results.</p>
+    <div class="cta-box" aria-label="Important Information">
+      <p>ℹ️ Note: ICT mark is 50</p>
+    </div>
+  </section>
+</main>
+
+<footer role="contentinfo">
+  <p>© 2025 SSC GPA Calculator. An initiative by <a href="https://riaz9543.github.io/Portfolio-/">Riaz uddin</a> Bangladesh.</p>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
