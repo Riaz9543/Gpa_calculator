@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Free online SSC GPA Calculator for Bangladesh. Accurately calculate your SSC GPA for Science, humanities, and Commerce groups with instant results. Official grading system compliant.">
-  <meta name="keywords" content="SSC GPA Calculator, SSC Result Calculator Bangladesh, Calculate GPA Online, Education Bangladesh, Secondary School Certificate, GPA Calculation Science humanitiesCommerce">
+  <meta name="description" content="Free online SSC GPA Calculator for Bangladesh. Accurately calculate your SSC GPA for Science, Humanities, and Commerce groups with instant results. Official grading system compliant.">
+  <meta name="keywords" content="SSC GPA Calculator, SSC Result Calculator Bangladesh, Calculate GPA Online, Education Bangladesh, Secondary School Certificate, GPA Calculation Science Humanities Commerce">
   <meta name="author" content="EdTech Bangladesh">
   <!-- Open Graph Tags -->
   <meta property="og:title" content="SSC GPA Calculator | Bangladesh Education Tool">
-  <meta property="og:description" content="Accurate SSC GPA Calculator for Science, humanities, and Commerce groups. Instant results with official grading system.">
+  <meta property="og:description" content="Accurate SSC GPA Calculator for Science, Humanities, and Commerce groups. Instant results with official grading system.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://example.com">
   <meta property="og:image" content="https://example.com/ssc-gpa-calculator.png">
@@ -28,7 +28,7 @@
     }
   }
   </script>
-  <title>SSC GPA Calculator Bangladesh - Science, humanities, Commerce Group Calculator</title>
+  <title>SSC GPA Calculator Bangladesh - Science, Humanities, Commerce Group Calculator</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="favicon.ico">
 </head>
@@ -43,6 +43,7 @@
       </div>
     </div>
     <p class="tagline">Calculate your Secondary School Certificate GPA in seconds</p>
+    <div class="version-badge">Bangladesh Education Board 2025</div>
   </header>
 
   <section class="group-select">
@@ -56,17 +57,19 @@
         <div class="group-info">
           <h3>Science</h3>
           <p>Physics, Chemistry, Biology/Higher Math</p>
+          <span class="subject-count">8 Main Subjects</span>
         </div>
       </button>
 
       <button type="button" 
               class="group-card humanities" 
               onclick="showSubjects('humanities')"
-              aria-label="Select humanitiesGroup">
+              aria-label="Select Humanities Group">
         <div class="group-icon">🎨</div>
         <div class="group-info">
-          <h3>humanities</h3>
+          <h3>Humanities</h3>
           <p>History, Civics, Economics</p>
+          <span class="subject-count">8 Main Subjects</span>
         </div>
       </button>
 
@@ -78,60 +81,118 @@
         <div class="group-info">
           <h3>Commerce</h3>
           <p>Accounting, Business, Finance</p>
+          <span class="subject-count">8 Main Subjects</span>
         </div>
       </button>
     </div>
   </section>
 
   <form id="gpaForm" style="display:none;" aria-label="GPA Form">
-    <div id="subjects"></div>
-
-    <div class="optional-subjects">
-      <div class="subject">
-        <label for="ict">ICT:</label>
-        <select class="grade" id="ict" aria-label="ICT Grade">
-          <option value="">--Grade--</option>
-          <option value="5">A+</option>
-          <option value="4">A</option>
-          <option value="3.5">A-</option>
-          <option value="3">B</option>
-          <option value="2">C</option>
-          <option value="1">D</option>
-          <option value="0">F</option>
-        </select>
-      </div>
-
-      <div class="subject">
-        <label for="optional">Optional Subject:</label>
-        <select class="grade" id="optional" aria-label="Optional Subject Grade">
-          <option value="">--Grade--</option>
-          <option value="5">A+</option>
-          <option value="4">A</option>
-          <option value="3.5">A-</option>
-          <option value="3">B</option>
-          <option value="2">C</option>
-          <option value="1">D</option>
-          <option value="0">F</option>
-        </select>
+    <div class="form-header">
+      <h3>📚 Enter Your Subject Grades</h3>
+      <div class="form-actions">
+        <button type="button" onclick="showGradeInfo()" class="info-btn" aria-label="Show Grading Information">
+          ℹ️ Grading Info
+        </button>
+        <button type="button" onclick="resetCalculator()" class="reset-btn" aria-label="Reset Calculator">
+          🔄 Reset
+        </button>
       </div>
     </div>
 
-    <button type="button" onclick="calculateGPA()" aria-label="Calculate GPA">Calculate GPA</button>
+    <div class="main-subjects-section">
+      <h4>Main Subjects (Required)</h4>
+      <div id="subjects"></div>
+    </div>
+
+    <div class="optional-subjects-section">
+      <h4>Additional Subjects</h4>
+      <div class="optional-subjects">
+        <div class="subject">
+          <label for="ict">
+            <span class="subject-name">ICT (Information & Communication Technology)</span>
+            <span class="required-badge">Required</span>
+          </label>
+          <select class="grade" id="ict" aria-label="ICT Grade">
+            <option value="">--Select Grade--</option>
+            <option value="5">A+ (5.00)</option>
+            <option value="4">A (4.00)</option>
+            <option value="3.5">A- (3.50)</option>
+            <option value="3">B (3.00)</option>
+            <option value="2">C (2.00)</option>
+            <option value="1">D (1.00)</option>
+            <option value="0">F (0.00)</option>
+          </select>
+        </div>
+
+        <div class="subject">
+          <label for="optional">
+            <span class="subject-name">Optional Subject (4th Subject)</span>
+            <span class="optional-badge">Optional</span>
+          </label>
+          <select class="grade" id="optional" aria-label="Optional Subject Grade">
+            <option value="">--Select Grade--</option>
+            <option value="5">A+ (5.00)</option>
+            <option value="4">A (4.00)</option>
+            <option value="3.5">A- (3.50)</option>
+            <option value="3">B (3.00)</option>
+            <option value="2">C (2.00)</option>
+            <option value="1">D (1.00)</option>
+            <option value="0">F (0.00)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-footer">
+      <button type="button" onclick="calculateGPA()" class="calculate-btn" aria-label="Calculate GPA">
+        🧮 Calculate GPA
+      </button>
+      <div class="keyboard-hints">
+        <small>💡 Tips: Press Enter to move to next field, Ctrl+Enter to calculate, ESC to reset</small>
+      </div>
+    </div>
   </form>
 
   <div id="result" aria-live="polite"></div>
 
   <section class="seo-content">
-    <h2>How to Calculate SSC GPA</h2>
-    <p>Calculate your Secondary School Certificate GPA instantly using our official Bangladesh education system calculator. Supports all groups including Science, humanities, and Commerce. Simply select your subjects and grades to get accurate GPA results.</p>
-    <div class="cta-box" aria-label="Important Information">
-      <p>ℹ️ Note: ICT mark is 50</p>
+    <h2>Complete SSC GPA Calculator for Bangladesh</h2>
+    <div class="content-grid">
+      <div class="content-card">
+        <h3>🎯 Accurate Calculation</h3>
+        <p>Calculate your Secondary School Certificate GPA instantly using the official Bangladesh education system. Supports all groups including Science, Humanities, and Commerce with precise grade point calculations.</p>
+      </div>
+      
+      <div class="content-card">
+        <h3>📊 Official Grading System</h3>
+        <p>Uses the official SSC grading system with proper handling of ICT and optional subjects. Get results equivalent to traditional division system.</p>
+      </div>
+      
+      <div class="content-card">
+        <h3>🚀 Advanced Features</h3>
+        <p>Includes auto-save, keyboard shortcuts, comprehensive validation, and detailed result breakdown with division equivalents.</p>
+      </div>
+    </div>
+    
+    <div class="important-notes">
+      <h3>📝 Important Notes</h3>
+      <ul>
+        <li><strong>ICT Subject:</strong> Mandatory for all groups - failure in ICT results in overall failure</li>
+        <li><strong>Optional Subject:</strong> Adds bonus points if grade is above 2.0 (bonus = grade - 2.0)</li>
+        <li><strong>Failure Rule:</strong> Any F grade in any subject results in 0.00 GPA</li>
+        <li><strong>Maximum GPA:</strong> Capped at 5.00 regardless of optional subject bonus</li>
+        <li><strong>Subject Count:</strong> 8 main subjects + ICT + 1 optional subject</li>
+      </ul>
     </div>
   </section>
 </main>
 
 <footer role="contentinfo">
-  <p>© 2025 SSC GPA Calculator. An initiative by <a href="https://riaz9543.github.io/Portfolio-/">Riaz uddin</a> Bangladesh.</p>
+  <div class="footer-content">
+    <p>© 2025 SSC GPA Calculator. An initiative by <a href="https://riaz9543.github.io/Portfolio-/" target="_blank" rel="noopener">Riaz uddin</a> for Bangladesh education.</p>
+    <p class="version-info">Version 2.0 - Enhanced with comprehensive SSC grading system</p>
+  </div>
 </footer>
 
 <script src="script.js" defer></script>
