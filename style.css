@@ -14,6 +14,45 @@
   padding: 0;
 }
 
+/* Navigation Styles */
+.top-nav {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.nav-link.active {
+  background: var(--gradient);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--background);
@@ -318,8 +357,32 @@ footer {
   animation: slideIn 1s ease-out;
 }
 
+.footer-nav {
+  margin-top: 1rem;
+}
+
+.footer-nav a {
+  color: var(--primary-color);
+  text-decoration: none;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: var(--hover-color);
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
+  .nav-links {
+    gap: 1rem;
+  }
+  
+  .nav-link {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  
   #subjects, .optional-subjects {
     grid-template-columns: 1fr;
   }
