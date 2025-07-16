@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="GPA Calculator Collection for Bangladesh - Calculate SSC and HSC GPA with official grading system. Free online tool for Secondary and Higher Secondary Certificate results.">
+  <meta name="keywords" content="GPA Calculator Bangladesh, SSC HSC Calculator, Education Bangladesh, Calculate GPA Online">
+  <meta name="author" content="EdTech Bangladesh">
+  <title>GPA Calculator Collection - Bangladesh SSC & HSC</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+    }
+
+    .container {
+      max-width: 800px;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .header {
+      margin-bottom: 3rem;
+      color: white;
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    .main-title {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .main-subtitle {
+      font-size: 1.3rem;
+      opacity: 0.9;
+      font-weight: 300;
+    }
+
+    .calculators {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .calculator-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      animation: slideInUp 0.6s ease-out;
+    }
+
+    .calculator-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+      background: rgba(255, 255, 255, 1);
+    }
+
+    .card-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .card-title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .card-description {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-groups {
+      font-size: 0.9rem;
+      color: #888;
+      font-style: italic;
+    }
+
+    .features {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      animation: slideInUp 0.8s ease-out;
+    }
+
+    .features h3 {
+      color: #333;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      text-align: left;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 0;
+    }
+
+    .feature-icon {
+      color: #4CAF50;
+      font-weight: bold;
+    }
+
+    .footer {
+      color: white;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .main-title {
+        font-size: 2rem;
+      }
+      
+      .main-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .calculators {
+        grid-template-columns: 1fr;
+      }
+      
+      .container {
+        padding: 1rem;
+      }
+      
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="main-title">🎓 GPA Calculator Collection</h1>
+      <p class="main-subtitle">Official Bangladesh Education System GPA Calculators</p>
+    </header>
+
+    <section class="calculators">
+      <a href="index.html" class="calculator-card">
+        <span class="card-icon">📚</span>
+        <h2 class="card-title">SSC GPA Calculator</h2>
+        <p class="card-description">
+          Calculate your Secondary School Certificate GPA instantly with our official Bangladesh education system calculator.
+        </p>
+        <p class="card-groups">Science • Humanities • Commerce</p>
+      </a>
+
+      <a href="hsc-index.html" class="calculator-card">
+        <span class="card-icon">🎓</span>
+        <h2 class="card-title">HSC GPA Calculator</h2>
+        <p class="card-description">
+          Calculate your Higher Secondary Certificate GPA with detailed breakdown and optional subject bonus calculation.
+        </p>
+        <p class="card-groups">Science • Business Studies • Humanities</p>
+      </a>
+    </section>
+
+    <section class="features">
+      <h3>Why Choose Our GPA Calculators?</h3>
+      <div class="features-grid">
+        <div class="feature-item">
+          <span class="feature-icon">✓</span>
+          <span>Official Bangladesh grading system</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">✓</span>
+          <span>Instant accurate calculations</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">✓</span>
+          <span>All groups supported</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">✓</span>
+          <span>Detailed result breakdown</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">✓</span>
+          <span>Mobile-friendly design</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">✓</span>
+          <span>Optional subject bonus</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© 2025 GPA Calculator Collection. Educational tools for Bangladesh students.</p>
+    </footer>
+  </div>
+</body>
+</html>

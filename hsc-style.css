@@ -1,0 +1,558 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header Styles */
+.hero-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: white;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.logo-container {
+  margin-bottom: 1rem;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.logo-icon {
+  font-size: 3rem;
+  animation: bounce 2s infinite;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+/* Group Selection Styles */
+.group-select {
+  margin-bottom: 2rem;
+}
+
+.group-heading {
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.group-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.group-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 15px;
+  padding: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  animation: slideInUp 0.6s ease-out;
+}
+
+.group-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  background: rgba(255, 255, 255, 1);
+}
+
+.group-card.selected {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(76, 175, 80, 0.4);
+}
+
+.group-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.group-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.group-info p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+/* Form Styles */
+#gpaForm {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  animation: slideInUp 0.6s ease-out;
+}
+
+.subject-category-title {
+  color: #333;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e0e0e0;
+  text-align: center;
+}
+
+.compulsory-subjects,
+.group-subjects,
+.optional-subjects {
+  margin-bottom: 2rem;
+}
+
+.subject {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  background: rgba(248, 249, 250, 0.8);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  animation: slideInLeft 0.4s ease-out;
+}
+
+.subject:hover {
+  background: rgba(240, 248, 255, 0.9);
+  transform: translateX(5px);
+}
+
+.subject label {
+  font-weight: 600;
+  color: #333;
+  font-size: 1rem;
+}
+
+.grade {
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.grade:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+  transform: scale(1.02);
+}
+
+.grade:hover {
+  border-color: #764ba2;
+}
+
+.grade.error {
+  border-color: #f44336;
+  background-color: #ffebee;
+}
+
+/* Button Styles */
+button[onclick="calculateHSCGPA()"] {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+  margin-top: 1rem;
+}
+
+button[onclick="calculateHSCGPA()"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+}
+
+button[onclick="calculateHSCGPA()"]:active {
+  transform: translateY(0);
+}
+
+/* Result Styles */
+#result {
+  margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 1.2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  animation: slideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+#result.success {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: white;
+  border: 3px solid #4CAF50;
+}
+
+#result.fail {
+  background: linear-gradient(135deg, #f44336, #d32f2f);
+  color: white;
+  border: 3px solid #f44336;
+}
+
+#result.error {
+  background: linear-gradient(135deg, #ff9800, #f57c00);
+  color: white;
+  border: 3px solid #ff9800;
+}
+
+.result-display h3 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.gpa-main {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.result-breakdown {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.result-breakdown p {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Info Section Styles */
+.info-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.calculation-info,
+.grade-info {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.calculation-info h3,
+.grade-info h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.calculation-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.calculation-info li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e0e0e0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.calculation-info li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+.grade-table {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.grade-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: rgba(248, 249, 250, 0.8);
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.grade-row:hover {
+  background: rgba(102, 126, 234, 0.1);
+  transform: translateX(5px);
+}
+
+.grade-letter {
+  font-weight: bold;
+  color: #667eea;
+}
+
+.grade-point {
+  text-align: center;
+  color: #333;
+}
+
+.grade-marks {
+  text-align: right;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* SEO Content Styles */
+.seo-content {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 15px;
+  margin: 2rem 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.seo-content h2,
+.seo-content h3 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.seo-content ul {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+.seo-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.cta-box {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  margin-top: 2rem;
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* Footer Styles */
+footer {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+.footer-nav {
+  margin-top: 1rem;
+}
+
+.footer-nav a {
+  color: #667eea;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: white;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+  
+  .logo {
+    font-size: 2rem;
+  }
+  
+  .logo-icon {
+    font-size: 2.5rem;
+  }
+  
+  .group-options {
+    grid-template-columns: 1fr;
+  }
+  
+  .subject {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  
+  .info-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .grade-row {
+    grid-template-columns: 1fr 1fr 1fr;
+    font-size: 0.9rem;
+  }
+  
+  .gpa-main {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  .tagline {
+    font-size: 1rem;
+  }
+  
+  .group-heading {
+    font-size: 1.5rem;
+  }
+  
+  .group-card {
+    padding: 1.5rem;
+  }
+  
+  .subject-category-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Focus styles for better accessibility */
+.group-card:focus {
+  outline: 3px solid #667eea;
+  outline-offset: 2px;
+}
+
+button:focus {
+  outline: 3px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .group-card {
+    border: 2px solid #000;
+  }
+  
+  .grade {
+    border: 2px solid #000;
+  }
+}
